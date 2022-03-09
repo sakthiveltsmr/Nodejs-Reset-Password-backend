@@ -34,6 +34,7 @@ const service = {
 
       // post the user data to db
       const postData = await mongo.register.insertOne(req.body);
+      console.log(postData);
       console.log("user register successfully");
     } catch (err) {
       console.log("err in registration", err);
