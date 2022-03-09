@@ -6,6 +6,8 @@ const express = require("express");
 
 const mongo = require("./schema/mongodb");
 
+const userRoute = require("./Routes/users.routes");
+
 const app = express();
 
 (async () => {
@@ -18,6 +20,8 @@ const app = express();
       console.log("user middle ware called");
       next();
     });
+
+    app.use("/users", userRoute);
     const port = process.env.PORT || 5000;
     app.listen(port, () => console.log(`server running at ${port}`));
   } catch (err) {

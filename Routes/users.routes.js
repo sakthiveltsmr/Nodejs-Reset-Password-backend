@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const service = require("../Services/users.service");
+const service = require("../Service/users.service");
 
 router.post("/register", service.register);
 
