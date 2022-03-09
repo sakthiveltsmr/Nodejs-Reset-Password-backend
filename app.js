@@ -13,7 +13,7 @@ const app = express();
 (async () => {
   try {
     await mongo.connect();
-    app.use(cors);
+    app.use(cors());
     app.use(express.json());
 
     app.use("/", (req, res, next) => {

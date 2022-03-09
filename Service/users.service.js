@@ -9,6 +9,7 @@ const { registerSchema, loginSchema } = require("../schema/schema");
 const service = {
   // register data service
   async register(req, res) {
+    console.log("register service");
     try {
       //validation using joi schema(value,error)
       const { value, error } = await registerSchema.validate(req.body);
