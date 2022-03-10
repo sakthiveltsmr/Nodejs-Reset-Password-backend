@@ -17,11 +17,11 @@ const app = express();
     app.use(cors());
     app.use(express.json());
 
-    // app.use((req, res, next) => {
-    //   console.log("user middle ware called");
-    //   res.send("server running");
-    //   next();
-    // });
+    app.use((req, res, next) => {
+      console.log("user middle ware called");
+      // res.send("server running");
+      next();
+    });
 
     app.use("/users", userRoute);
 
