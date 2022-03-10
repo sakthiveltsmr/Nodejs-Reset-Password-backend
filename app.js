@@ -7,6 +7,7 @@ const express = require("express");
 const mongo = require("./schema/mongodb");
 
 const userRoute = require("./Routes/users.routes");
+const resetRoute = require("./Routes/resetPass.routes");
 
 const app = express();
 
@@ -23,6 +24,8 @@ const app = express();
     // });
 
     app.use("/users", userRoute);
+
+    app.use("/resetpassword", resetRoute);
 
     const port = process.env.PORT || 3001;
     app.listen(port, () => console.log(`server running at ${port}`));
