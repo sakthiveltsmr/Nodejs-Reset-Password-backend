@@ -42,7 +42,7 @@ const service = {
       { ReturnDocument: "after" }
     );
     console.log(data);
-    const link = `https://reset-password-muthu.herokuapp.com/resetpassword/${userExist._id}/${token}`;
+    const link = `https://sakthi-reset-password.netlify.app/resetpassword/${userExist._id}/${token}`;
 
     await sendMail(userExist.email, "password Reset", link);
     res.status(200).send({
